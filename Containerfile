@@ -4,7 +4,7 @@ ARG SRC_REPO=https://github.com/aldostools/webMAN-MOD.git
 ARG SRC_BRANCH=master
 ARG SRC_PATH=_Projects_/ps3netsrv
 
-FROM alpine:${ALPINE_VERSION} AS build
+FROM docker.io/library/alpine:${ALPINE_VERSION} AS build
 ARG SRC_REPO
 ARG SRC_BRANCH
 ARG SRC_PATH
@@ -23,7 +23,7 @@ RUN set -ex && \
     meson build --buildtype=release && \
     ninja -C build/
 
-FROM alpine:${ALPINE_VERSION} AS runtime
+FROM docker.io/library/alpine:${ALPINE_VERSION} AS runtime
 ARG SRC_PATH
 
 COPY --from=build /ps3netsrv/src/${SRC_PATH}/build/ps3netsrv /usr/bin/ps3netsrv
