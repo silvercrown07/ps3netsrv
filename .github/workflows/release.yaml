@@ -1,7 +1,7 @@
 name: release the image to github container registry
 
 env:
-  VERSION: 20201030
+  VERSION: 20200708
 
 on:
   push:
