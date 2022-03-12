@@ -1,4 +1,4 @@
-ARG ALPINE_VERSION=3.13
+ARG ALPINE_VERSION=3.15
 
 ARG SRC_REPO=https://github.com/aldostools/webMAN-MOD.git
 ARG SRC_BRANCH=master
